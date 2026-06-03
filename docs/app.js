@@ -13,22 +13,28 @@
 //      then a switch statement inside for each possible "newState"
 // 3) app.js runs on load and queries everything into memory and hooks up event listeners
 
-// register elements from DOM into memory
+// query everything into memory
 const buttonToAbout = document.getElementById("toAbout")
-const buttonToForm = document.getElementById("toForm")
+const buttonToApp = document.getElementById("toApp")
+const heading = document.getElementsByTagName("h1")[0]
+const aboutBlurb = document.getElementsByTagName("p")[0]
 
-
-//hook up buttons
-buttonToAbout.addEventListener("click", toAbout)
-buttonToForm.addEventListener("click", toForm)
-
-
-function toAbout() {
+// button toAbout
+buttonToAbout.addEventListener("click", () => {
     console.log("to about!")
-    changeHeading("toAbout")
-}
 
-function toForm() {
+    heading.innerText = "About Heading"
+    buttonToAbout.style.display = "none"
+    aboutBlurb.style.display = "block"
+})
+
+// button toForm
+document.getElementById("toApp").addEventListener("click", () => {
     console.log("to form!")
-    changeHeading("toForm")
-}
+
+    //how do I load a new page?
+})
+
+
+
+
